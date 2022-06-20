@@ -1,5 +1,4 @@
 // middleware are functions that execute during the req & res cycle
-
 const errorHandler = (err, req, res, next) => {
   const statusCode = res.statusCode ? res.statusCode : 500;
 

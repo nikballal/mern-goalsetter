@@ -7,9 +7,12 @@ const {
   deleteGoal,
 } = require("../controller/goalController");
 
+//to protect the logguser's goals
+const { protect } = require("../middleware/authMiddleware");
+
 //replace the below routes with these
-router.route("/").get(getGoals).post(setGoal);
-router.route("/:id").put(updateGoal).delete(deleteGoal);
+router.route("/").get(protect, getGoals).post(protect, setGoal); //protect all the goal routes
+router.route("/:id").put(protect, updateGoal).delete(protect, deleteGoal);
 
 // router.get("/", getGoals);
 // router.post("/", setGoal);

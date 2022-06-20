@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 
 //API url
 app.use("/api/goals", require("./routes/goalRoutes"));
+app.use("/api/users", require("./routes/userRoutes"));
 
 //insert underneath the routes
 app.use(errorHandler);
