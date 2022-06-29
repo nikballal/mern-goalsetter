@@ -34,8 +34,6 @@ function Login() {
   }, [user, isError, isSuccess, message, navigate, dispatch]);
 
   const onChange = (e) => {
-    e.preventDefault();
-
     setFormData((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value, //key-value pair [key]:value
@@ -61,7 +59,6 @@ function Login() {
     <>
       <section className="heading">
         <h1>
-          {" "}
           <FaSignInAlt /> Login
         </h1>
         <p>Please login to continue</p>

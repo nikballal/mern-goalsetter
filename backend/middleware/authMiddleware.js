@@ -18,7 +18,7 @@ const protect = asyncHandler(async (req, res, next) => {
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
       //Get user from the token
-      req.user = await User.findById(decoded.id).select("-password"); //exclude the hashed password
+      req.user = await User.findById(decoded.id).select("-password"); //exclude the hashed password, 'req.user' is used in 'userController'
 
       next(); //to call the next piece of middleware after the end of one middleware
     } catch (error) {
